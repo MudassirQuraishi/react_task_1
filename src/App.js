@@ -1,6 +1,6 @@
 import Heading from "./components/Heading";
 import List from "./components/List";
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
 
 function App() {
     const expenses = [
