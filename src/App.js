@@ -1,11 +1,13 @@
 import Heading from "./components/Heading";
 import List from "./components/List";
+import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
     return (
         <div>
-            <Heading></Heading>
-            <List></List>
+            <ExpenseItem></ExpenseItem>
+            {/* <Heading></Heading>
+            <List></List> */}
         </div>
     );
 }
