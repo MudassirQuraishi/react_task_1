@@ -1,13 +1,12 @@
+import { useState } from "react";
 import "./ExpenseItem.css";
 function ExpenseDetails(props) {
-    const amount = props.amount;
     const title = props.title;
     const place = props.place;
 
-    const deleteExpense = (e) => {
-        const element = e.target.parentElement.parentElement;
-        const parent = element.parentElement;
-        parent.removeChild(element);
+    const [amount, setAmount] = useState(props.amount);
+    const incrementAmount = (e) => {
+        setAmount("$100");
     };
     return (
         <>
@@ -15,7 +14,7 @@ function ExpenseDetails(props) {
                 <h2>{title}</h2>
                 <div>{place}</div>
                 <div className='expense-item__price'>{amount}</div>
-                <button onClick={deleteExpense}>Delete Expense</button>
+                <button onClick={incrementAmount}>Update Expense</button>
             </div>
         </>
     );
