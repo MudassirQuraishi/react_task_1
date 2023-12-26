@@ -15,7 +15,12 @@ const InputDiv = () => {
     };
     const submitForm = (e) => {
         e.preventDefault();
-        console.log(enteredTitle + " " + enteredAmount + " " + enteredDate);
+        const formDetails = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: enteredDate,
+        };
+        console.log(formDetails);
     };
     return (
         <form>
