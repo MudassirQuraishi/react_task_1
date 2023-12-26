@@ -1,3 +1,4 @@
+import ExpenseForm from "./components/Expenses/ExpenseForm";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 
 function App() {
@@ -32,19 +33,20 @@ function App() {
         },
     ];
     return (
-        <div>
-            {expenses.map((expense) => (
-                <ExpenseItem
-                    key={expense.id}
-                    title={expense.title}
-                    amount={expense.amount}
-                    date={expense.date}
-                    place={expense.locationOfExpenditure}
-                />
-            ))}
-            {/* <Heading></Heading>
-            <List></List> */}
-        </div>
+        <>
+            <ExpenseForm></ExpenseForm>
+            <div>
+                {expenses.map((expense) => (
+                    <ExpenseItem
+                        key={expense.id}
+                        title={expense.title}
+                        amount={expense.amount}
+                        date={expense.date}
+                        place={expense.locationOfExpenditure}
+                    />
+                ))}
+            </div>
+        </>
     );
 }
 
