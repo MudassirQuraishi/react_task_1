@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./InputDiv.css";
-const InputDiv = () => {
+const InputDiv = (props) => {
     const [enteredTitle, setTitle] = useState();
     const [enteredAmount, setAmount] = useState();
     const [enteredDate, setDate] = useState();
@@ -21,9 +21,13 @@ const InputDiv = () => {
             date: enteredDate,
         };
         console.log(formDetails);
+        props.onFromSubmit(formDetails);
+        setTitle("");
+        setDate("");
+        setAmount("");
     };
     return (
-        <form>
+        <form onSubmit={submitForm}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
@@ -31,6 +35,7 @@ const InputDiv = () => {
                         type={"text"}
                         id={"expense-title"}
                         placeholder={"Enter your expense"}
+                        value={enteredTitle}
                         onChange={changeTitle}
                     />
                 </div>
@@ -40,6 +45,7 @@ const InputDiv = () => {
                         type={"number"}
                         id={"expense-amount"}
                         placeholder={"Enter your expense amount"}
+                        value={enteredAmount}
                         onChange={changeAmount}
                     />
                 </div>
@@ -49,6 +55,7 @@ const InputDiv = () => {
                         type={"date"}
                         id={"expense-date"}
                         placeholder={"Select a date"}
+                        value={enteredDate}
                         onChange={changeDate}
                     />
                 </div>
@@ -56,8 +63,7 @@ const InputDiv = () => {
                     <button
                         type='submit'
                         id='add-expense-button'
-                        className='add-btn'
-                        onSubmit={submitForm}>
+                        className='add-btn'>
                         Add Expense
                     </button>
                 </div>
