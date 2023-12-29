@@ -10,6 +10,7 @@ const App = () => {
     { text: 'Finish the course!', id: 'g2' }
   ]);
 
+<<<<<<< Updated upstream
   const addGoalHandler = enteredText => {
     setCourseGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
@@ -17,6 +18,21 @@ const App = () => {
       return updatedGoals;
     });
   };
+=======
+    const addUserHandler = (uName, uAge, uCollegeName) => {
+        setUsersList((prevUsersList) => {
+            return [
+                ...prevUsersList,
+                {
+                    name: uName,
+                    age: uAge,
+                    collegeName: uCollegeName,
+                    id: Math.random().toString(),
+                },
+            ];
+        });
+    };
+>>>>>>> Stashed changes
 
   const deleteItemHandler = goalId => {
     setCourseGoals(prevGoals => {
